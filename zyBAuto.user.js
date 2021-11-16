@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name         zyBooks Autocomplete
-// @version      0.1
+// @version      0.2
 // @description  One click to speed up the boring parts
 // @author       Evanito
 // @match        https://learn.zybooks.com/zybook/*
