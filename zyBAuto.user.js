@@ -20,8 +20,15 @@ var autoRun = false;
     if (autoRun) {
         run();
     } else {
-        document.getElementsByClassName('right-buttons')[0].innerHTML += '<button id="zbaButton" type="button">Autocomplete!</button>';
-        document.getElementById("zbaButton").addEventListener ("click", zBAStartButton, false);
+        (function repeat() {
+          try {
+            document.getElementsByClassName('right-buttons')[0].innerHTML = '<button id="zbaButton" type="button">Autocomplete!</button>' + document.getElementsByClassName('right-buttons')[0].innerHTML;
+            document.getElementById("zbaButton").addEventListener ("click", zBAStartButton, false);
+          } catch (error) {
+          setTimeout(() => {
+            repeat()
+            }, 1000)
+        }})()
     }
 })();
 
